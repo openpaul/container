@@ -1,0 +1,7 @@
+FROM continuumio/miniconda3:4.9.2
+
+RUN conda config --set ssl_verify no; conda install -y -c bioconda -c conda-forge \
+            cmseq bowtie2 bwa "biopython<=1.76" "pysam>=0.16"; \
+            conda clean --all 
+
+
