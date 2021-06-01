@@ -1,0 +1,12 @@
+FROM continuumio/miniconda3
+
+RUN apt update && apt install -y procps pigz && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN conda config --set ssl_verify no; \
+    conda config --add channels conda-forge; \
+    conda config --add channels bioconda; \
+    conda config --add channels default; \
+    conda install "hmmer>=3.3.2" pip;\
+    conda clean --all; \
+    pip install bigslice;
+
