@@ -8,5 +8,5 @@ RUN conda config --set ssl_verify no; \
     conda config --add channels default; \
     conda install "hmmer>=3.3.2" pip;\
     conda clean --all; \
-    pip install bigslice;
+    pip install bigslice; download_bigslice_hmmdb
 
